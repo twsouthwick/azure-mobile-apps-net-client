@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices.Sync;
@@ -70,6 +71,122 @@ namespace Microsoft.WindowsAzure.MobileServices.Test
             Assert.AreEqual(hijack.Requests[0].Headers.GetValues("X-ZUMO-FEATURES").First(), "TU,OL");
             Assert.AreEqual(hijack.RequestContents[1], item2.ToString(Formatting.None));
             Assert.AreEqual(hijack.Requests[1].Headers.GetValues("X-ZUMO-FEATURES").First(), "TU,OL");
+
+            // create yet another service to make sure the old items were purged from queue
+            hijack = new TestHttpHandler();
+            hijack.AddResponseContent("{\"id\":\"abc\",\"String\":\"Hey\"}");
+            service = new MobileServiceClient(MobileAppUriValidator.DummyMobileApp, hijack);
+            await service.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+            Assert.AreEqual(hijack.Requests.Count, 0);
+            await service.SyncContext.PushAsync();
+            Assert.AreEqual(hijack.Requests.Count, 0);
+        }
+
+        [AsyncTestMethod]
+        public async Task PushAsync_ExecutesThePendingOperations_InOrder_BatchedOne()
+        {
+            var hijack = new TestHttpHandler();
+            IMobileServiceClient service = new MobileServiceClient(MobileAppUriValidator.DummyMobileApp, hijack);
+            var store = new MobileServiceLocalStoreMock();
+            await service.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+
+            IMobileServiceSyncTable table = service.GetSyncTable("someTable");
+
+            JObject item1 = new JObject() { { "id", "abc" } }, item2 = new JObject() { { "id", "def" } };
+
+            await table.InsertAsync(item1);
+            await table.InsertAsync(item2);
+
+            Assert.AreEqual(hijack.Requests.Count, 0);
+
+            // create a new service to test that operations are loaded from store
+            hijack = new TestHttpHandler();
+
+            var content = new MultipartContent("mixed", "6f078995-ef2a-4617-a4c9-5d8746b26d32");
+            var response = new HttpResponseMessage(HttpStatusCode.OK) {
+                Content = new StringContent("{\"id\":\"abc\",\"String\":\"Hey\"}", Encoding.UTF8, "application/json")
+            };
+            content.Add(new HttpMessageContent(response));
+            hijack.AddResponseContent(content);
+
+            content = new MultipartContent("mixed", "6f078995-ef2a-4617-a4c9-5d8746b26d32");
+            response = new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent("{\"id\":\"def\",\"String\":\"What\"}", Encoding.UTF8, "application/json")
+            };
+            content.Add(new HttpMessageContent(response));
+            hijack.AddResponseContent(content);
+
+            service = new MobileServiceClient(MobileAppUriValidator.DummyMobileApp, hijack);
+            await service.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+            service.SyncContext.BatchApiEndpoint = "batch";
+            service.SyncContext.BatchSize = 1;
+
+            Assert.AreEqual(hijack.Requests.Count, 0);
+            await service.SyncContext.PushAsync();
+            Assert.AreEqual(hijack.Requests.Count, 2);
+
+            Assert.IsTrue(hijack.RequestContents[0].Contains(item1.ToString(Formatting.None)));
+            Assert.IsTrue(hijack.RequestContents[0].Contains("X-ZUMO-FEATURES: TU,OL"));
+            Assert.IsTrue(hijack.RequestContents[1].Contains(item2.ToString(Formatting.None)));
+            Assert.IsTrue(hijack.RequestContents[1].Contains("X-ZUMO-FEATURES: TU,OL"));
+
+            // create yet another service to make sure the old items were purged from queue
+            hijack = new TestHttpHandler();
+            hijack.AddResponseContent("{\"id\":\"abc\",\"String\":\"Hey\"}");
+            service = new MobileServiceClient(MobileAppUriValidator.DummyMobileApp, hijack);
+            await service.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+            Assert.AreEqual(hijack.Requests.Count, 0);
+            await service.SyncContext.PushAsync();
+            Assert.AreEqual(hijack.Requests.Count, 0);
+        }
+
+        [AsyncTestMethod]
+        public async Task PushAsync_ExecutesThePendingOperations_InOrder_Batched()
+        {
+            var hijack = new TestHttpHandler();
+            IMobileServiceClient service = new MobileServiceClient(MobileAppUriValidator.DummyMobileApp, hijack);
+            var store = new MobileServiceLocalStoreMock();
+            await service.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+
+            IMobileServiceSyncTable table = service.GetSyncTable("authenticated");
+
+            JObject item1 = new JObject() { { "id", "abc" } }, item2 = new JObject() { { "id", "def" } };
+
+            await table.InsertAsync(item1);
+            await table.InsertAsync(item2);
+
+            Assert.AreEqual(hijack.Requests.Count, 0);
+
+            // create a new service to test that operations are loaded from store
+            hijack = new TestHttpHandler();
+
+            var content = new MultipartContent("mixed", "6f078995-ef2a-4617-a4c9-5d8746b26d32");
+            var response = new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent("{\"id\":\"abc\",\"String\":\"Hey\"}", Encoding.UTF8, "application/json")
+            };
+            content.Add(new HttpMessageContent(response));
+
+            response = new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent("{\"id\":\"def\",\"String\":\"What\"}", Encoding.UTF8, "application/json")
+            };
+            content.Add(new HttpMessageContent(response));
+            hijack.AddResponseContent(content);
+
+            service = new MobileServiceClient(MobileAppUriValidator.DummyMobileApp, hijack);
+            await service.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+            service.SyncContext.BatchApiEndpoint = "batch";
+
+            Assert.AreEqual(hijack.Requests.Count, 0);
+            await service.SyncContext.PushAsync();
+            Assert.AreEqual(hijack.Requests.Count, 1);
+
+            Assert.IsTrue(hijack.RequestContents[0].Contains(item1.ToString(Formatting.None)));
+            Assert.IsTrue(hijack.RequestContents[0].Contains("X-ZUMO-FEATURES: TU,OL"));
+            Assert.IsTrue(hijack.RequestContents[0].Contains(item2.ToString(Formatting.None)));
+            Assert.IsTrue(hijack.RequestContents[0].Contains("X-ZUMO-FEATURES: TU,OL"));
 
             // create yet another service to make sure the old items were purged from queue
             hijack = new TestHttpHandler();

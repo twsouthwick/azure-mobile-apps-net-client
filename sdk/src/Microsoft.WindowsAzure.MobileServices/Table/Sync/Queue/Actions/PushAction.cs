@@ -6,8 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.WindowsAzure.MobileServices.Table.Sync.Queue.Actions;
 using Newtonsoft.Json.Linq;
 
 namespace Microsoft.WindowsAzure.MobileServices.Sync
@@ -127,30 +129,117 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
 
         private async Task ExecuteAllOperationsAsync(OperationBatch batch)
         {
-            MobileServiceTableOperation operation = await this.OperationQueue.PeekAsync(0, this.tableKind, this.tableNames);
+            long prevSeq = 0;
+
+            if (this.client.SyncContext.BatchApiEndpoint == null)
+            {
+                MobileServiceTableOperation operation = await this.OperationQueue.PeekAsync(prevSeq, this.tableKind, this.tableNames);
+
+                // keep taking out operations and executing them until queue is empty or operation finds the bookmark or batch is aborted 
+                while (operation != null)
+                {
+                    using (await this.OperationQueue.LockItemAsync(operation.ItemId, this.CancellationToken))
+                    {
+                        bool success = await this.ExecuteOperationAsync(operation, batch);
+
+                        if (batch.AbortReason.HasValue)
+                        {
+                            break;
+                        }
+
+                        if (success)
+                        {
+                            // we successfuly executed an operation so remove it from queue
+                            await this.OperationQueue.DeleteAsync(operation.Id, operation.Version);
+                        }
+
+                        // get next operation
+                        operation = await this.OperationQueue.PeekAsync(operation.Sequence, this.tableKind, this.tableNames);
+                    }
+                }
+
+                return;
+            }
+            
+            var baseClient = this.client;
 
             // keep taking out operations and executing them until queue is empty or operation finds the bookmark or batch is aborted 
-            while (operation != null)
+            while (true)
             {
-                using (await this.OperationQueue.LockItemAsync(operation.ItemId, this.CancellationToken))
-                {
-                    bool success = await this.ExecuteOperationAsync(operation, batch);
+                var filter = new MultipartRequestHandler();
+                this.client = new MobileServiceClient(baseClient.MobileAppUri, filter);
 
-                    if (batch.AbortReason.HasValue)
-                    {
-                        break;
-                    }
+                // Get X Operations off the queue
+                List<MobileServiceTableOperation> items = new List<MobileServiceTableOperation>();
+                MobileServiceTableOperation operation = await this.OperationQueue.PeekAsync(prevSeq, this.tableKind, this.tableNames);
+
+                while (operation != null && items.Count < baseClient.SyncContext.BatchSize)
+                {
+                    items.Add(operation);
+                    prevSeq = operation.Sequence;
+                    operation = await this.OperationQueue.PeekAsync(prevSeq, this.tableKind, this.tableNames);
+                }
+
+                if (items.Count == 0)
+                {
+                    break;
+                }
+
+                filter.ExpectedRequests = items.Count;
+
+                // TODO: LOCK OPERATIONS
+
+                // TODO: Trigger pre send hooks...
+
+                List<Task<bool>> runningOperations = new List<Task<bool>>();
+                MultipartContent finalContent = new MultipartContent("mixed", "batch_" + Guid.NewGuid().ToString());
+                foreach (var tableOperation in items)
+                {
+                    Task<bool> tableOperationtask = this.ExecuteOperationAsync(tableOperation, batch);
+                    runningOperations.Add(tableOperationtask);
+                }
+
+                // TODO: Move the actual POST into the filter?
+
+                // TODO: Adjust count if op task is cancelled/etc before hitting filter
+                
+                await filter.allOperationsQueued();
+                foreach (var content in filter.Parts)
+                {
+                    finalContent.Add(content);
+                }
+
+                var batchedResponse = await baseClient.InvokeApiAsync(baseClient.SyncContext.BatchApiEndpoint, finalContent, HttpMethod.Post, null, null, this.CancellationToken);
+                MultipartMemoryStreamProvider responseContents = await batchedResponse.Content.ReadAsMultipartAsync();
+
+                // TODO: verify order on response == order on request
+                for (int i = 0; i < responseContents.Contents.Count; i++)
+                {
+                    var response = await responseContents.Contents[i].ReadAsHttpResponseMessageAsync();
+                    var promise = filter.Promises[i];
+                    promise.SetResult(response);
+                }
+
+                // Now review results of all operations in the batch
+                for (int i = 0; i < runningOperations.Count; i++) {
+                    var tableOperationTask = runningOperations[i];
+                    var success = await tableOperationTask;
 
                     if (success)
                     {
                         // we successfuly executed an operation so remove it from queue
-                        await this.OperationQueue.DeleteAsync(operation.Id, operation.Version);
+                        var tableOperation = items[i];
+                        await this.OperationQueue.DeleteAsync(tableOperation.Id, tableOperation.Version);
                     }
+                }
 
-                    // get next operation
-                    operation = await this.OperationQueue.PeekAsync(operation.Sequence, this.tableKind, this.tableNames);
+                if (batch.AbortReason.HasValue)
+                {
+                    break;
                 }
             }
+
+            this.client = baseClient;
         }
 
         private async Task<bool> ExecuteOperationAsync(MobileServiceTableOperation operation, OperationBatch batch)
@@ -160,7 +249,8 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
                 return false;
             }
 
-            operation.Table = await this.context.GetTable(operation.TableName);
+            operation.Table = await this.context.GetTable(operation.TableName, this.client);
+
             await this.LoadOperationItem(operation, batch);
 
             if (this.CancellationToken.IsCancellationRequested)
