@@ -131,7 +131,7 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
         {
             long prevSeq = 0;
 
-            if (this.client.SyncContext.BatchApiEndpoint == null)
+            if (this.context.BatchApiEndpoint == null)
             {
                 MobileServiceTableOperation operation = await this.OperationQueue.PeekAsync(prevSeq, this.tableKind, this.tableNames);
 
@@ -173,7 +173,7 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
                 List<MobileServiceTableOperation> items = new List<MobileServiceTableOperation>();
                 MobileServiceTableOperation operation = await this.OperationQueue.PeekAsync(prevSeq, this.tableKind, this.tableNames);
 
-                while (operation != null && items.Count < baseClient.SyncContext.BatchSize)
+                while (operation != null && items.Count < context.BatchSize)
                 {
                     items.Add(operation);
                     prevSeq = operation.Sequence;
@@ -209,7 +209,7 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
                     finalContent.Add(content);
                 }
 
-                var batchedResponse = await baseClient.InvokeApiAsync(baseClient.SyncContext.BatchApiEndpoint, finalContent, HttpMethod.Post, null, null, this.CancellationToken);
+                var batchedResponse = await baseClient.InvokeApiAsync(context.BatchApiEndpoint, finalContent, HttpMethod.Post, null, null, this.CancellationToken);
                 MultipartMemoryStreamProvider responseContents = await batchedResponse.Content.ReadAsMultipartAsync();
 
                 // TODO: verify order on response == order on request
