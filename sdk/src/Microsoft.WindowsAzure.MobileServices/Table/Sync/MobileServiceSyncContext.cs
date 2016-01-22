@@ -43,7 +43,11 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
         private StoreTrackingOptions storeTrackingOptions; 
         
         private IMobileServiceLocalStore localOperationsStore;
-        
+
+        private string batchApiEndpoint;
+
+        private long batchSize = 10;
+
         public IMobileServiceSyncHandler Handler { get; private set; }
 
         public IMobileServiceLocalStore Store
@@ -84,6 +88,26 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
                     return 0;
                 }
                 return this.opQueue.PendingOperations;
+            }
+        }
+
+        public string BatchApiEndpoint
+        {
+            get { return this.batchApiEndpoint;  }
+            set { this.batchApiEndpoint = value; }
+        }
+
+        public long BatchSize
+        {
+            get { return this.batchSize; }
+            set 
+            {
+                if (value <= 0)
+                {
+                    return;
+                }
+
+                this.batchSize = value; 
             }
         }
 
@@ -304,11 +328,19 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
             await action.CompletionTask;
         }
 
-        public virtual async Task<MobileServiceTable> GetTable(string tableName)
+        public virtual async Task<MobileServiceTable> GetTable(string tableName, IMobileServiceClient client = null)
         {
             await this.EnsureInitializedAsync();
 
-            var table = this.client.GetTable(tableName) as MobileServiceTable;
+            MobileServiceTable table;
+            if (client == null)
+            {
+                table = this.client.GetTable(tableName) as MobileServiceTable;
+            }
+            else
+            {
+                table = client.GetTable(tableName) as MobileServiceTable;
+            }
             table.Features = MobileServiceFeatures.Offline;
 
             return table;

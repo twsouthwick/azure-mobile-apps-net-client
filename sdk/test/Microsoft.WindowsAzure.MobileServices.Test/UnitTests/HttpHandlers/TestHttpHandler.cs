@@ -68,6 +68,14 @@ namespace Microsoft.WindowsAzure.MobileServices.Test
             this.Responses.Add(CreateResponse(content));
         }
 
+        public void AddResponseContent(HttpContent content)
+        {
+            this.Responses.Add(new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = content
+            });
+        }
+
         protected async override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             string content = request.Content == null ? null : await request.Content.ReadAsStringAsync();

@@ -55,6 +55,10 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
         /// <returns>Returns the number of pending operations against the remote table.</returns>
         long PendingOperations { get; }
 
+        string BatchApiEndpoint { get; set; }
+
+        long BatchSize { get; set; }
+
         /// <summary>
         /// Pushes all pending operations up to the remote table.
         /// </summary>
