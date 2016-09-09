@@ -105,10 +105,12 @@ namespace Microsoft.WindowsAzure.MobileServices
             // release with Json.NET
 
             // JsonSerializer will throw id ReferenceResolver is set to null
+#pragma warning disable CS0618 // Type or member is obsolete
             if (this.ReferenceResolver != null)
             {
                 serializer.ReferenceResolver = this.ReferenceResolver;
             }
+#pragma warning restore CS0618 // Type or member is obsolete
 
             // Add each of the converters
             foreach (var converter in this.Converters)
