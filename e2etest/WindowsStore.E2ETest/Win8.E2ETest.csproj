@@ -89,12 +89,12 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <ProjectReference Include="..\E2ETestFramework\E2ETestFramework.csproj">
       <Project>{a2500bd2-a9a2-4085-9978-dee3675b02dd}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.TestFramework</Name>
+      <Name>E2ETestFramework</Name>
       <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\E2ETest\E2ETest.csproj">
       <Project>{d8bbc92a-b213-463b-911d-3a106f91d5f9}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.Test</Name>
+      <Name>E2ETest</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

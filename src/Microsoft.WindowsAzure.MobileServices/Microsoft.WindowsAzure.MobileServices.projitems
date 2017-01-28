@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>93069db3-1c22-45cc-b984-a9018ab1dbf5</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Microsoft.WindowsAzure.MobileServices</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\MobileServiceTokenAuthentication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\MobileServiceCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\MobileServiceCollectionEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnumValueAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Eventing\EventManagerExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\PlatformInformationExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\PreserveAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\LocalStoreProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\StoreChangeTrackerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\StoreChangeEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MobileServiceConflictException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MobileServiceInvalidOperationException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MobileServicePreconditionFailedException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MobileServiceLocalStoreException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MobileServiceODataException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MobileServicePushAbortException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ExceptionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\IDictionaryExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\JTokenExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\MobileServiceClientExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\MobileServiceCollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\MobileServiceLocalStoreExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\MobileServiceSyncContextExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\MobileServiceSyncTableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\MobileServiceTableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TypeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\HttpUtility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\LinkHeaderValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\MobileServiceHttpResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IMobileServiceClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\MobileServiceAuthentication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\MobileServiceAuthenticationProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MobileServiceClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MobileServiceFeatures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MobileServiceUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\IApplicationStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\IPushUtility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\IExpressionUtility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\IPlatform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\IPlatformInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\MobileServiceHttpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\Platform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\CommonAssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Push\PushInstallationProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Push\PushHttpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Table\MobileServiceObjectReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\PurgeCompletedEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\StoreOperationBatchCompletedEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Eventing\MobileServiceEventObserver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Eventing\IMobileServiceEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Eventing\IMobileServiceEventManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Eventing\ISubscription.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\LocalStoreChangeTracker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Eventing\MobileServiceEventManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Eventing\MobileServiceEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\StoreOperationCompletedEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\LocalStoreOperationKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\PullOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Operations\MobileServiceTableKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\MobileServiceSystemColumns.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\MobileServiceSystemProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\IQueryResultEnumerable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\Linq\FilterBuildingExpressionVisitor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\Linq\IMobileServiceTableQuery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\Linq\MemberInfoKey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\Linq\MobileServiceTableQuery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\Linq\MobileServiceTableQueryProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\Linq\MobileServiceTableQueryTranslator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\ODataOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\BinaryOperatorKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\BinaryOperatorNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\ConstantNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\ConvertNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\ODataExpressionLexer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\QueryNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\QueryNodeVisitor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\MemberAccessNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\FunctionCallNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\QueryNodeKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\ODataExpressionParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\ODataExpressionVisitor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\QueryToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\QueryTokenKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\UnaryOperatorKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\UnaryOperatorNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\OrderByDirection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\OData\OrderByNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\QueryResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\DeletedAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\IMobileServiceLocalStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServiceLocalStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServicePushStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServiceSyncHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\IMobileServiceSyncContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\IMobileServiceSyncTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\IMobileServiceSyncTable.Generic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\UpdatedAtAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\CreatedAtAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\VersionAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\ISystemPropertyAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\IMobileServiceTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\IMobileServiceTable.Generic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\MobileServiceTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\MobileServiceTable.Generic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MobileServiceUrlBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\ITotalCountProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\MobileServiceTableQueryDescription.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\QueryResultEnumerable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Query\QueryResultList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\DataTableAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\MobileServiceContractResolver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\MobileServiceSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\MobileServiceJsonSerializerSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\MobileServicePrecisionCheckConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Serialization\MobileServiceIsoDateTimeConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServiceSyncSettingsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServiceRemoteTableOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Actions\IncrementalPullStrategy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Actions\PullCursor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Actions\PullStrategy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Actions\SyncAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Actions\PurgeAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Actions\PullAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Actions\TableAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Operations\MobileServiceTableOperationError.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Operations\DeleteOperation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Operations\MobileServiceTableOperationState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Operations\UpdateOperation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Operations\InsertOperation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\OperationBatch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Operations\IMobileServiceTableOperation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\IMobileServiceSyncHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServiceSyncContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServicePushCompletionResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServiceSyncTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServiceSyncTable.Generic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Operations\MobileServiceTableOperationKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\OperationQueue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Operations\MobileServiceTableOperation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Queue\Actions\PushAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MobileServicePushFailedException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\MobileServiceLocalSystemTables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\StoreOperation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\StoreOperationsBatch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\StoreOperationSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\StoreTrackingOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\StoreTrackingContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threading\ActionBlock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threading\AsyncLock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threading\AsyncLockDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threading\AsyncReaderWriterLock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threading\DisposeAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
