@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+  },
+  "frameworks": {
+    "portable45-net45+win8+wp8": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

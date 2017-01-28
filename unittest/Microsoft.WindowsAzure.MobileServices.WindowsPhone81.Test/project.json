@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+  },
+  "frameworks": {
+    "wpa81": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

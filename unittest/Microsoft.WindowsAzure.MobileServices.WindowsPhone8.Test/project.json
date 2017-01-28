@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+  },
+  "frameworks": {
+    "wp81": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

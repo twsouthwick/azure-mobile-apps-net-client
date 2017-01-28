@@ -128,9 +128,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="project.json" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -186,44 +184,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SQLitePCLRaw.core.1.1.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http.Extensions">
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http.Primitives">
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="PlatformTests\" />
     <Folder Include="UnitTests\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <ProjectExtensions />
-  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Import Project="..\..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_wp80.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.v110_wp80.targets" Condition="Exists('..\..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_wp80.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.v110_wp80.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_wp80.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.v110_wp80.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_wp80.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.v110_wp80.targets'))" />
-    <Error Condition="!Exists('..\..\packages\SQLitePCLRaw.provider.e_sqlite3.wp80.1.1.2\build\wp8\SQLitePCLRaw.provider.e_sqlite3.wp80.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SQLitePCLRaw.provider.e_sqlite3.wp80.1.1.2\build\wp8\SQLitePCLRaw.provider.e_sqlite3.wp80.targets'))" />
-    <Error Condition="!Exists('..\..\packages\SQLitePCLRaw.bundle_green.1.1.2\build\wp8\SQLitePCLRaw.bundle_green.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SQLitePCLRaw.bundle_green.1.1.2\build\wp8\SQLitePCLRaw.bundle_green.targets'))" />
-  </Target>
-  <Import Project="..\..\packages\SQLitePCLRaw.provider.e_sqlite3.wp80.1.1.2\build\wp8\SQLitePCLRaw.provider.e_sqlite3.wp80.targets" Condition="Exists('..\..\packages\SQLitePCLRaw.provider.e_sqlite3.wp80.1.1.2\build\wp8\SQLitePCLRaw.provider.e_sqlite3.wp80.targets')" />
-  <Import Project="..\..\packages\SQLitePCLRaw.bundle_green.1.1.2\build\wp8\SQLitePCLRaw.bundle_green.targets" Condition="Exists('..\..\packages\SQLitePCLRaw.bundle_green.1.1.2\build\wp8\SQLitePCLRaw.bundle_green.targets')" />
 </Project>

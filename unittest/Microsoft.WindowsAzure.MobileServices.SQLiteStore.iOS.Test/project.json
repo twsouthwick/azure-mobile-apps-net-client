@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+  },
+  "frameworks": {
+    "xamarinios10": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

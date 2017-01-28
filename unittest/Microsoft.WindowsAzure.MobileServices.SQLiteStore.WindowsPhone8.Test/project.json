@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+  },
+  "frameworks": {
+    "wp8": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}
