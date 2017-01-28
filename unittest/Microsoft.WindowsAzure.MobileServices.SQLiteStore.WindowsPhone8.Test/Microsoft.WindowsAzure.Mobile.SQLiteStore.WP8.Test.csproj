@@ -184,14 +184,6 @@
       <Project>{CD5D8A3A-5631-41BF-8161-8A2A7F892B71}</Project>
       <Name>Microsoft.WindowsAzure.Mobile.SQLiteStore.Test</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Microsoft.WindowsAzure.MobileServices.TestFramework\Microsoft.WindowsAzure.Mobile.TestFramework.csproj">
-      <Project>{3cffb62f-3384-4d71-badc-7542d5c31a9e}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.TestFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Microsoft.WindowsAzure.MobileServices.Test\Microsoft.WindowsAzure.Mobile.Test.csproj">
-      <Project>{05b6709b-c25a-4c1d-8d61-9e05bee0db86}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.Test</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

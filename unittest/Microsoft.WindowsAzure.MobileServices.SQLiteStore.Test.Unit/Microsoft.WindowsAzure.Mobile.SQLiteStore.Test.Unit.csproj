@@ -86,10 +86,6 @@
       <Project>{75557793-e36e-4190-8714-5bd2665859fb}</Project>
       <Name>Microsoft.WindowsAzure.Mobile</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Microsoft.WindowsAzure.MobileServices.Test\Microsoft.WindowsAzure.Mobile.Test.csproj">
-      <Project>{05b6709b-c25a-4c1d-8d61-9e05bee0db86}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.Test</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

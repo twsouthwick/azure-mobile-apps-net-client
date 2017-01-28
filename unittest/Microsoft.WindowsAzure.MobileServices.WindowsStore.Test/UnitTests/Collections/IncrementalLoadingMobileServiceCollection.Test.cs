@@ -21,7 +21,7 @@ namespace Microsoft.WindowsAzure.MobileServices.Test
 
     [Tag("collection")]
     [Tag("unit")]
-    public class MobileServiceCollectionTest : TestBase
+    public partial class MobileServiceCollectionTest : TestBase
     {
         [AsyncTestMethod]
         public async Task MobileServiceCollectionLoadMoreItemsAsyncExceptionsNotHandledByDefault()

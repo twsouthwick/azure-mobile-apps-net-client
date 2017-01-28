@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>93069db3-1c22-45cc-b984-a9018ab1dbf5</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Microsoft.WindowsAzure.MobileServices</Import_RootNamespace>
+  </PropertyGroup>
+   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\ActionContinuation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\Assert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\AsyncTestMethodAsyncAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\AsyncTestMethodAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\ExcludeTestAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\FunctionalTestAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\FunctionalTestFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IAsyncExecution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IContinuation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\ITestReporter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TagAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TagManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TagManager.ExpressionEvaluator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TagManager.Tags.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TagTestFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TestBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TestFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TestGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TestHarness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TestMethod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TestMethodAsyncAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TestMethodAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TestSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)..\..\src\Microsoft.WindowsAzure.MobileServices\Properties\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>

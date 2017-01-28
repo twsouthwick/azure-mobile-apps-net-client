@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>93069db3-1c22-45cc-b984-a9018ab1dbf5</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Microsoft.WindowsAzure.MobileServices</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Mocks\MobileServiceEventManagerMock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\JObjectTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\TypeWithConstructor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestPlatform\TestHttpDelegatingHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Common\UriUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Eventing\TestEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Http\HttpUtilityTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\MobileAppUriValidator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\OData\ODataExpressionParser.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\MobileServiceObjectReaderTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Sync\Eventing\LocalStoreChangeTracker.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Sync\Eventing\StoreChangeTrackerFactoryTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Sync\MobileServiceSyncContext.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Eventing\MobileServiceEventManager.Test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AssertEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FunctionalTests\DataSourceTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FunctionalTests\Table\MobileServiceTableTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mocks\MobileServiceSyncHandlerMock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mocks\MobileServiceLocalStoreMock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mocks\MobileServiceTableQueryMock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\ComplexType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\ConverterType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\SystemPropertyTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\InterfacePropertyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\TestConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestData\IdTestData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestData\SystemPropertiesTestData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestPlatform\IPushTestUtility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestPlatform\ITestPlatform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestPlatform\MissingPushTestUtility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestPlatform\MissingTestPlatform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestPlatform\TestPlatform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Collections\MobileServiceCollection.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\HttpHandlers\TestHttpHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FunctionalTests\BloggingTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FunctionalTests\Book.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FunctionalTests\DateTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FunctionalTests\FunctionalTestBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FunctionalTests\QueryingTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FunctionalTests\ToDoTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)..\..\src\Microsoft.WindowsAzure.MobileServices\Properties\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\BaseTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\DataContractDerivedDataContractType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\DataContractDerivedJsonPropertyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\DataContractDerivedPocoType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\DataContractType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\DataMemberType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\DataTableType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\DerivedDuplicateKeyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\DuplicateKeyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\IdTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\JsonContainerType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\JsonPropertyDerivedDataContractType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\JsonPropertyDerivedJsonPropertyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\JsonPropertyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\PocoDerivedDataContractType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\PocoDerivedJsonPropertyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\PocoDerivedPocoType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\PocoType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\SerializationTypeUtility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializationTypes\SimpleTreeType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\HttpHandlers\ComplexDelegatingHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\MobileServiceFeatures.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\MobileServiceClient.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Authentication\MobileServiceTokenAuthenticationTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Push\Push.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\MobileServiceTable.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\MobileServiceUser.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\MobileServiceUrlBuilder.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\MobileServiceTable.Generic.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Query\MemberInfoKey.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Query\ZumoQuery.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Serialization\MobileServiceIsoDateTimeConverter.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Serialization\MobileServiceContractResolver.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Serialization\MobileServiceSerializer.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Serialization\MobileServicePrecisionCheckConverter.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Sync\MobileServiceSyncTable.Generic.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Table\Sync\MobileServiceSyncTable.Test.cs" />
+  </ItemGroup>
+</Project>
