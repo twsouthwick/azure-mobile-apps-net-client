@@ -186,9 +186,9 @@
       <Project>{B1CCA4C2-DEDF-43AF-B54D-067C5AC6A391}</Project>
       <Name>Microsoft.WindowsAzure.Mobile.UI.WP8</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.WindowsPhone8\Microsoft.WindowsAzure.Mobile.Ext.WP8.csproj">
-      <Project>{EB3834A2-3C20-4F39-BEE9-87DFCAB81670}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.Ext.WP8</Name>
+    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.WindowsPhone8\Microsoft.WindowsAzure.Mobile.WP8.csproj">
+      <Project>{3114E433-7FC1-4056-8CF9-2406E32BB10D}</Project>
+      <Name>Microsoft.WindowsAzure.Mobile.WP8</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices\Microsoft.WindowsAzure.Mobile.csproj">
       <Project>{75557793-E36E-4190-8714-5BD2665859FB}</Project>

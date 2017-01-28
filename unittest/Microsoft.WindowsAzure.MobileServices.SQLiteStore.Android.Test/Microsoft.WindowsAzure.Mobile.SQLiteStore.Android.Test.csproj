@@ -117,9 +117,9 @@
     <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.Android\Microsoft.WindowsAzure.Mobile.Ext.Android.csproj">
+    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.Android\Microsoft.WindowsAzure.Mobile.Android.csproj">
       <Project>{0f77566d-014f-4d09-b783-d4e701627d15}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.Ext.Android</Name>
+      <Name>Microsoft.WindowsAzure.Mobile.Android</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.SQLiteStore\Microsoft.WindowsAzure.Mobile.SQLiteStore.csproj">
       <Project>{4c20d49a-fe5e-4d9c-98b9-8125450074f5}</Project>

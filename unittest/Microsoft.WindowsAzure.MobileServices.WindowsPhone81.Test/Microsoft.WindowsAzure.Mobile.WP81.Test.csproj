@@ -81,9 +81,9 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.WindowsPhone81\Microsoft.WindowsAzure.Mobile.Ext.WP81.csproj">
+    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.WindowsPhone81\Microsoft.WindowsAzure.Mobile.WP81.csproj">
       <Project>{02eef75a-d824-4203-b243-c1b97b0d35a9}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.Ext.WP81</Name>
+      <Name>Microsoft.WindowsAzure.Mobile.WP81</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices\Microsoft.WindowsAzure.Mobile.csproj">
       <Project>{75557793-e36e-4190-8714-5bd2665859fb}</Project>

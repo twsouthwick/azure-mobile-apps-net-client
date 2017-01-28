@@ -60,9 +60,9 @@
     <Compile Include="Authentication\AuthenticationBroker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.WindowsAzure.MobileServices.WindowsPhone8\Microsoft.WindowsAzure.Mobile.Ext.WP8.csproj">
-      <Project>{EB3834A2-3C20-4F39-BEE9-87DFCAB81670}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.Ext.WP8</Name>
+    <ProjectReference Include="..\Microsoft.WindowsAzure.MobileServices.WindowsPhone8\Microsoft.WindowsAzure.Mobile.WP8.csproj">
+      <Project>{3114E433-7FC1-4056-8CF9-2406E32BB10D}</Project>
+      <Name>Microsoft.WindowsAzure.Mobile.WP8</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

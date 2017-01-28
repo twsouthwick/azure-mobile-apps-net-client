@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.WindowsAzure.MobileServices</RootNamespace>
-    <AssemblyName>Microsoft.WindowsAzure.Mobile.Ext</AssemblyName>
+    <AssemblyName>Microsoft.WindowsAzure.Mobile</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -31,7 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>$(OutputPath)\Microsoft.WindowsAzure.Mobile.Ext.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Microsoft.WindowsAzure.Mobile.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

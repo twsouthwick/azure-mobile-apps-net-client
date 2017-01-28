@@ -6,15 +6,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "e2etest", "e2etest", "{45E5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{28D05719-6DC4-4962-BC7E-75F9C72E695C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.Ext.Net45", "src\Microsoft.WindowsAzure.MobileServices.Net45\Microsoft.WindowsAzure.Mobile.Ext.Net45.csproj", "{8BE160B5-ADBF-4FE0-A0E2-A4A77A87E620}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.Net45", "src\Microsoft.WindowsAzure.MobileServices.Net45\Microsoft.WindowsAzure.Mobile.Net45.csproj", "{8BE160B5-ADBF-4FE0-A0E2-A4A77A87E620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.Ext.Win8", "src\Microsoft.WindowsAzure.MobileServices.WindowsStore\Microsoft.WindowsAzure.Mobile.Ext.Win8.csproj", "{41E0BBEA-091B-4C06-AE08-B7F50E2BEB8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.Win8", "src\Microsoft.WindowsAzure.MobileServices.WindowsStore\Microsoft.WindowsAzure.Mobile.Win8.csproj", "{41E0BBEA-091B-4C06-AE08-B7F50E2BEB8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.Ext.WP8", "src\Microsoft.WindowsAzure.MobileServices.WindowsPhone8\Microsoft.WindowsAzure.Mobile.Ext.WP8.csproj", "{3114E433-7FC1-4056-8CF9-2406E32BB10D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.WP8", "src\Microsoft.WindowsAzure.MobileServices.WindowsPhone8\Microsoft.WindowsAzure.Mobile.WP8.csproj", "{3114E433-7FC1-4056-8CF9-2406E32BB10D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.UI.WP8", "src\Microsoft.WindowsAzure.MobileServices.WindowsPhone8.UI\Microsoft.WindowsAzure.Mobile.UI.WP8.csproj", "{B1CCA4C2-DEDF-43AF-B54D-067C5AC6A391}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.Ext.WP81", "src\Microsoft.WindowsAzure.MobileServices.WindowsPhone81\Microsoft.WindowsAzure.Mobile.Ext.WP81.csproj", "{02EEF75A-D824-4203-B243-C1B97B0D35A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.WP81", "src\Microsoft.WindowsAzure.MobileServices.WindowsPhone81\Microsoft.WindowsAzure.Mobile.WP81.csproj", "{02EEF75A-D824-4203-B243-C1B97B0D35A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2ETest", "e2etest\E2ETest\E2ETest.csproj", "{D8BBC92A-B213-463B-911D-3A106F91D5F9}"
 EndProject
@@ -46,9 +46,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.TestFramework", "unittest\Microsoft.WindowsAzure.MobileServices.TestFramework\Microsoft.WindowsAzure.Mobile.TestFramework.csproj", "{3CFFB62F-3384-4D71-BADC-7542D5C31A9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.Ext.Android", "src\Microsoft.WindowsAzure.MobileServices.Android\Microsoft.WindowsAzure.Mobile.Ext.Android.csproj", "{0F77566D-014F-4D09-B783-D4E701627D15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.Android", "src\Microsoft.WindowsAzure.MobileServices.Android\Microsoft.WindowsAzure.Mobile.Android.csproj", "{0F77566D-014F-4D09-B783-D4E701627D15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.Ext.iOS", "src\Microsoft.WindowsAzure.MobileServices.iOS\Microsoft.WindowsAzure.Mobile.Ext.iOS.csproj", "{A871B137-83A8-4E9B-913D-30EE0288E161}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAzure.Mobile.iOS", "src\Microsoft.WindowsAzure.MobileServices.iOS\Microsoft.WindowsAzure.Mobile.iOS.csproj", "{A871B137-83A8-4E9B-913D-30EE0288E161}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android.E2ETest", "e2etest\Android.E2ETest\Android.E2ETest.csproj", "{36A77431-95A0-4AA7-924A-A8F6C6C631C6}"
 EndProject

@@ -161,9 +161,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.Net45\Microsoft.WindowsAzure.Mobile.Ext.Net45.csproj">
-      <Project>{6c5430ce-1dee-422a-94e3-071eb25e7429}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.Ext.Net45</Name>
+    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.Net45\Microsoft.WindowsAzure.Mobile.Net45.csproj">
+      <Project>{8BE160B5-ADBF-4FE0-A0E2-A4A77A87E620}</Project>
+      <Name>Microsoft.WindowsAzure.Mobile.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices.SQLiteStore\Microsoft.WindowsAzure.Mobile.SQLiteStore.csproj">
       <Project>{4c20d49a-fe5e-4d9c-98b9-8125450074f5}</Project>

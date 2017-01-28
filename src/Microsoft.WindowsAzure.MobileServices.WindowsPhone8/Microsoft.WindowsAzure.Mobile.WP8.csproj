@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.WindowsAzure.MobileServices</RootNamespace>
-    <AssemblyName>Microsoft.WindowsAzure.Mobile.Ext</AssemblyName>
+    <AssemblyName>Microsoft.WindowsAzure.Mobile</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
@@ -43,7 +43,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>$(OutputPath)\Microsoft.WindowsAzure.Mobile.Ext.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\Microsoft.WindowsAzure.Mobile.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\Microsoft.WindowsAzure.MobileServices.WindowsStore\Platform\CurrentPlatform.cs">

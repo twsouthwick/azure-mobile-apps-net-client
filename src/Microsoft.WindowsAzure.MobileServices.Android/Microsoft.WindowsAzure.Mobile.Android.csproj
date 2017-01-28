@@ -1,17 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory),Microsoft.WindowsAzure.Mobile.Build.msbuild))\tools\Microsoft.WindowsAzure.Mobile.Build.settings.targets" Condition="$(CmdLine) != ''" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A871B137-83A8-4E9B-913D-30EE0288E161}</ProjectGuid>
-    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F77566D-014F-4D09-B783-D4E701627D15}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>Microsoft.WindowsAzure.MobileServices</RootNamespace>
-    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Microsoft.WindowsAzure.Mobile.Ext</AssemblyName>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AssemblyName>Microsoft.WindowsAzure.Mobile</AssemblyName>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -19,26 +26,33 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG;__IOS__;__MOBILE__;PLATFORM_IOS;XAMARIN_AUTH_INTERNAL;__UNIFIED__</DefineConstants>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;PLATFORM_ANDROID;XAMARIN_AUTH_INTERNAL</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
-    <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\iPhone\Release</OutputPath>
+    <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <DocumentationFile>bin\iPhone\Release\Microsoft.WindowsAzure.Mobile.Ext.xml</DocumentationFile>
-    <DefineConstants>__IOS__;__MOBILE__;PLATFORM_IOS;XAMARIN_AUTH_INTERNAL;__UNIFIED__</DefineConstants>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <DocumentationFile>bin\Release\Microsoft.WindowsAzure.Mobile.xml</DocumentationFile>
+    <DefineConstants>PLATFORM_ANDROID;XAMARIN_AUTH_INTERNAL</DefineConstants>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Microsoft.WindowsAzure.MobileServices.WindowsStore\ExpressionUtility\PartialEvaluator.cs">
       <Link>ExpressionUtility\PartialEvaluator.cs</Link>
@@ -49,26 +63,20 @@
     <Compile Include="..\Microsoft.WindowsAzure.MobileServices.WindowsStore\Platform\ExpressionUtility.cs">
       <Link>Platform\ExpressionUtility.cs</Link>
     </Compile>
-    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.iOS\ACAccountWrapper.cs">
-      <Link>Auth\iOS\ACAccountWrapper.cs</Link>
+    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.Android\ActivityEx.cs">
+      <Link>Auth\Android\ActivityEx.cs</Link>
     </Compile>
-    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.iOS\FormAuthenticatorController.cs">
-      <Link>Auth\iOS\FormAuthenticatorController.cs</Link>
+    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.Android\ActivityStateRepository.cs">
+      <Link>Auth\Android\ActivityStateRepository.cs</Link>
     </Compile>
-    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.iOS\KeyChainAccountStore.cs">
-      <Link>Auth\iOS\KeyChainAccountStore.cs</Link>
+    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.Android\AndroidAccountStore.cs">
+      <Link>Auth\Android\AndroidAccountStore.cs</Link>
     </Compile>
-    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.iOS\ProgressLabel.cs">
-      <Link>Auth\iOS\ProgressLabel.cs</Link>
+    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.Android\FormAuthenticatorActivity.cs">
+      <Link>Auth\Android\FormAuthenticatorActivity.cs</Link>
     </Compile>
-    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.iOS\UIViewControllerEx.cs">
-      <Link>Auth\iOS\UIViewControllerEx.cs</Link>
-    </Compile>
-    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.iOS\WebAuthenticatorController.cs">
-      <Link>Auth\iOS\WebAuthenticatorController.cs</Link>
-    </Compile>
-    <Compile Include="..\Microsoft.WindowsAzure.MobileServices.Android\ExpressionUtility\ExpressionVisitor.cs">
-      <Link>ExpressionUtility\ExpressionVisitor.cs</Link>
+    <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth.Android\WebAuthenticatorActivity.cs">
+      <Link>Auth\Android\WebAuthenticatorActivity.cs</Link>
     </Compile>
     <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth\Account.cs">
       <Link>Auth\Account.cs</Link>
@@ -139,32 +147,23 @@
     <Compile Include="..\External\Xamarin.Auth\src\Xamarin.Auth\WebUtilities.cs">
       <Link>Auth\WebUtilities.cs</Link>
     </Compile>
+    <Compile Include="Platform\PushUtility.cs" />
     <Compile Include="Authentication\MobileServiceUIAuthentication.cs" />
+    <Compile Include="ExpressionUtility\ExpressionVisitor.cs" />
     <Compile Include="Extensions\MobileServiceClientExtensions.cs" />
     <Compile Include="Platform\ApplicationStorage.cs" />
     <Compile Include="Platform\CurrentPlatform.cs" />
     <Compile Include="Platform\PlatformInformation.cs" />
     <Compile Include="Push\Push.cs" />
-    <Compile Include="Platform\PushUtility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="Xamarin.iOS" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <BundleResource Include="project.json" />
+    <None Include="app.config" />
+    <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="..\Microsoft.WindowsAzure.MobileServices\Microsoft.WindowsAzure.MobileServices.projitems" Label="Shared" />
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\tools\Microsoft.Bcl.Build.targets')" />
 </Project>
