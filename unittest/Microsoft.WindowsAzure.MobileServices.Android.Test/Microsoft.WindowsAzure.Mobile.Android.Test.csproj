@@ -103,10 +103,6 @@
       <Project>{0f77566d-014f-4d09-b783-d4e701627d15}</Project>
       <Name>Microsoft.WindowsAzure.Mobile.Android</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices\Microsoft.WindowsAzure.Mobile.csproj">
-      <Project>{75557793-e36e-4190-8714-5bd2665859fb}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

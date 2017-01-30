@@ -135,10 +135,6 @@
       <Project>{75557793-e36e-4190-8714-5bd2665859fb}</Project>
       <Name>Microsoft.WindowsAzure.Mobile</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Microsoft.WindowsAzure.MobileServices.SQLiteStore.Test\Microsoft.WindowsAzure.Mobile.SQLiteStore.Test.csproj">
-      <Project>{cd5d8a3a-5631-41bf-8161-8a2a7f892b71}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.SQLiteStore.Test</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -54,12 +54,6 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Microsoft.WindowsAzure.MobileServices.WindowsStore\ExpressionUtility\PartialEvaluator.cs">
-      <Link>ExpressionUtility\PartialEvaluator.cs</Link>
-    </Compile>
-    <Compile Include="..\Microsoft.WindowsAzure.MobileServices.WindowsStore\ExpressionUtility\VisitorHelper.cs">
-      <Link>ExpressionUtility\VisitorHelper.cs</Link>
-    </Compile>
     <Compile Include="..\Microsoft.WindowsAzure.MobileServices.WindowsStore\Platform\ExpressionUtility.cs">
       <Link>Platform\ExpressionUtility.cs</Link>
     </Compile>

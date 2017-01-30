@@ -14,6 +14,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Collections\MobileServiceCollectionEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnumValueAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Eventing\EventManagerExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExpressionUtility\PartialEvaluator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExpressionUtility\VisitorHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\PlatformInformationExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Platform\PreserveAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Table\Sync\Eventing\LocalStoreProxy.cs" />

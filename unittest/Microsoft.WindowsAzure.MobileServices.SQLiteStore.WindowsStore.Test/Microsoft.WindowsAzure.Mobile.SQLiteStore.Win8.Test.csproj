@@ -112,14 +112,6 @@
       <Project>{41e0bbea-091b-4c06-ae08-b7f50e2beb8a}</Project>
       <Name>Microsoft.WindowsAzure.Mobile.Win8</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Microsoft.WindowsAzure.MobileServices\Microsoft.WindowsAzure.Mobile.csproj">
-      <Project>{75557793-e36e-4190-8714-5bd2665859fb}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Microsoft.WindowsAzure.MobileServices.SQLiteStore.Test\Microsoft.WindowsAzure.Mobile.SQLiteStore.Test.csproj">
-      <Project>{cd5d8a3a-5631-41bf-8161-8a2a7f892b71}</Project>
-      <Name>Microsoft.WindowsAzure.Mobile.SQLiteStore.Test</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -173,6 +165,9 @@
   <ItemGroup>
     <None Include="project.json" />
   </ItemGroup>
+  <Import Project="..\Microsoft.WindowsAzure.MobileServices.SQLiteStore.Test\Microsoft.WindowsAzure.Mobile.SQLiteStore.Test.projitems" Label="Shared" />
+  <Import Project="..\Microsoft.WindowsAzure.MobileServices.TestFramework\Microsoft.WindowsAzure.Mobile.TestFramework.projitems" Label="Shared" />
+  <Import Project="..\Microsoft.WindowsAzure.MobileServices.Test\Microsoft.WindowsAzure.Mobile.Test.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
